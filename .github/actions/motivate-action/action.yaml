@@ -1,6 +1,6 @@
 name: "Motivate Action"
 description: "Prints a motivational quote when an issue is labeled 'motivate'."
-author: "Your Name"
+author: "Fictions"
 
 inputs:
   github-token:

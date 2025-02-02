@@ -41619,12 +41619,12 @@ async function fetchQuote() {
 
     return {
       text: quoteData.quote || "Stay positive and keep moving forward!",
-      author: quoteData.author || "Unknown"
+      author: quoteData.author || "Mister Wonderfull"
     };
 
   } catch (error) {
     console.error("❌ Failed to fetch quote:", error);
-    return { text: "Stay positive and keep moving forward!", author: "ChatGPT" };
+    return { text: "Stay positive and keep moving forward!", author: "Other" };
   }
 }
 
