@@ -1,0 +1,15 @@
+{
+    "name": "motivate-action",
+    "version": "1.0.0",
+    "description": "A GitHub Action that posts motivational quotes on issues.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "@actions/core": "^1.10.0",
+      "@actions/github": "^5.0.0",
+      "axios": "^1.3.0"
+    }
+  }
+  

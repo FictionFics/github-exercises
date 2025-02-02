@@ -1,0 +1,16 @@
+name: "Motivate Action"
+description: "Prints a motivational quote when an issue is labeled 'motivate'."
+author: "Your Name"
+
+inputs:
+  github-token:
+    description: "GitHub Token to authenticate"
+    required: true
+
+runs:
+  using: "node16"
+  main: "index.js"
+
+branding:
+  icon: "zap"
+  color: "green"
