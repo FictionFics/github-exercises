@@ -24,3 +24,17 @@ In this exercise I added a new step in the `cd.yaml` to add in the github reposi
 
 - Link for working Pipeline: https://github.com/FictionFics/github-exercises/actions/runs/13097946502/job/36542585917
 - Published Hangman-api: https://github.com/FictionFics/github-exercises/pkgs/container/github-exercises%2Fhangman-api
+
+### 4. Crea una custom JavaScript Action - OPCIONAL
+
+This exercise was a bit tricky, because the webpage for motivational phrases was not longer exist and I need to find a new one that could work more or less. Other thing I need to install npx to create a index.js because was not able to read the modules. I will explain better what I did:
+
+1- I created an `actions` folder and `motivate-action` inside it, I added there the `index.js`, `actions.yaml` and `package.json`
+2- I added a new workflow with the name `motivate.yaml` where is going to be executed each time that a motivate Label is added into a issue.
+
+- Link of a worked pipeline: https://github.com/FictionFics/github-exercises/actions/runs/13102198930
+- Link of the example issue: https://github.com/FictionFics/github-exercises/issues/3
+
+### Screenshots from issues
+![alt text](image.png)
+![alt text](image-1.png)
