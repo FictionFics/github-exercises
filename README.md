@@ -20,20 +20,7 @@ I created a `cd.yaml` where I included the write permissions for the `GITHUB_TOK
 
 ### 3. Crea un workflow que ejecute tests e2e - OPCIONAL
 
-Crea un workflow que se lance de la manera que elijas y ejecute los tests e2e que encontrarás en [este enlance](../03-github-actions/.start-code/hangman-e2e/e2e/). Puedes usar [Docker Compose](https://docs.docker.com/compose/gettingstarted/) o [Cypress action](https://github.com/cypress-io/github-action) para ejecutar los tests.
+In this exercise I added a new step in the `cd.yaml` to add in the github repository the `hanman-api` because we only did the front-end one. Apart from this I added a new yaml: `e2e-tests.yaml` and I need to the same as previous exercise to lower case my repo name.
 
-#### Como ejecutar los tests e2e
-
-* Tanto el front como la api se deben estar corriendo
-
-```bash
-docker run -d -p 3001:3000 hangman-api
-docker run -d -p 8080:8080 -e API_URL=http://localhost:3001 hangman-front
-```
-
-* Los tests se ejecutan desde el directorio `hangman-e2e/e2e` haciendo uso del comando `npm run open`
-
-```bash
-cd hangman-e2e/e2e
-npm run open
-```
+- Link for working Pipeline: https://github.com/FictionFics/github-exercises/actions/runs/13097946502/job/36542585917
+- Published Hangman-api: https://github.com/FictionFics/github-exercises/pkgs/container/github-exercises%2Fhangman-api
