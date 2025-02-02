@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -35,4 +35,4 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           working-directory: ./hangman-e2e/e2e
-          command: npm run open
+          command: npm run test
