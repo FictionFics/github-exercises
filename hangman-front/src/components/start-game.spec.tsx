@@ -7,7 +7,7 @@ describe('StartGame component specs', () => {
   it('should display a list of topics', async () => {
     const getTopicsStub = jest
       .spyOn(api, 'getTopics')
-      .mockResolvedValue(['topic A', 'topic B']);
+      .mockResolvedValue(['topic A']);
     
     render(<StartGameComponent />);
 
