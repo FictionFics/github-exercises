@@ -1,13 +1,11 @@
 name: CI for Hangman Frontend
 
 on:
+  push:
+    branches: [ main ]
   pull_request:
-    paths:
-      - 'hangman-front/**'
-    types:
-      - opened
-      - synchronize
-      - reopened
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build-and-test:
