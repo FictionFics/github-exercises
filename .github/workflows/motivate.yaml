@@ -12,7 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install dependencies for Motivate Action
+        run: npm install
+        working-directory: .github/actions/motivate-action
+
       - name: Run Motivate Action
-        uses: ./.github/actions/motivate-actions
+        uses: ./.github/actions/motivate-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
