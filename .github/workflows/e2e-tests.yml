@@ -1,0 +1,35 @@
+name: E2E Tests for Hangman Frontend
+
+on:
+  workflow_dispatch:  # Permite ejecución manual
+  pull_request:       # Opcional: Se ejecuta en cada PR
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Pull and Run API container
+        run: docker run -d -p 3001:3000 ghcr.io/${{ github.repository_owner }}/hangman-api:latest
+
+      - name: Pull and Run Frontend container
+        run: docker run -d -p 8080:8080 -e API_URL=http://localhost:3001 ghcr.io/${{ github.repository_owner }}/hangman-front:latest
+
+      - name: Wait for services to be ready
+        run: sleep 10 
+
+      - name: Install dependencies for E2E
+        working-directory: ./hangman-e2e/e2e
+        run: npm ci
+
+      - name: Run Cypress E2E tests
+        uses: cypress-io/github-action@v5
+        with:
+          working-directory: ./hangman-e2e/e2e
+          command: npm run open
