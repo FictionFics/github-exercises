@@ -35,4 +35,4 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           working-directory: ./hangman-e2e/e2e
-          command: npm run test
+          command: npm run
